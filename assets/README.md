@@ -31,3 +31,6 @@
 
 9. Animerat kort
     Rutan som innehåller information om kameran ska slidea in från vänster när man väl scrollat ned dit. 
+
+10. Navbar
+    Position fixed både mobil, tablet och desktop.
