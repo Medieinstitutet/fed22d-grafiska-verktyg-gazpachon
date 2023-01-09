@@ -1,0 +1,37 @@
+:root {
+  font-family: var(--body-font);
+  font-size: rem(16px);
+  background: rgb(40, 40, 40);
+  color: white;
+
+  /*
+    measurements
+  
+  mobil -
+  tablet 768px
+  desktop 1024px
+  
+  */
+
+  // fonts
+  --body-font: 'Exo 2', sans-serif;
+
+  // colors
+  --primary-color: #4b4b86;
+  --green-color: rgb(59, 141, 34);
+  --red-color: rgb(136, 24, 20);
+  --background-color: rgb(29 28 28); // footer & info-bar..
+  --rounded-corners: 10px;
+  --box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.9);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Chathura', sans-serif;
+  font-size: 6rem;
+}
