@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 .hero-container {
     height: 100vh;
     background-image: url("/assets/photos/melvin-lauber--c43MZ7UmWM-unsplash\(1\).jpg");
@@ -12,6 +15,7 @@
         place-content: center;
         background-color: rgb(18, 18, 18);
         opacity: 0;
+        display: none;
     }
         ul {
             display: flex;
@@ -36,11 +40,23 @@
     h1 {
         font-family: 'Chathura', sans-serif;
         position: absolute;
-        left: 60px;
+        left: 20px;
         bottom: 40px;
-        line-height: 5rem;
+        line-height: 3.5rem;
         font-weight: 300;
+        font-size: 4rem; // TODO: Should be 96px, yet that does not make sense.
     }  
+
+    .arrow-btn {
+        height: 60px;
+        width: 60px;
+        background-color: white;
+        border-radius: 100%;
+        font-size: 1.8rem;
+        position: absolute;
+        right: 10%;
+        bottom: 110px;
+    }
 } 
 
 .menuToggleBtn {
