@@ -1,4 +1,4 @@
-  /*
+/*
   MEDIA QUERY BREAKPOINTS:
 
   mobile -
@@ -10,26 +10,30 @@
   font-family: var(--body-font);
   font-size: rem(16px);
   background-color: var(--black-color);
-  color: #FFFFFF;
+  color: #ffffff;
 
   // fonts
   --body-font: 'Exo 2', sans-serif;
   --header-font: 'Chathura', sans-serif;
 
   // colors
-  --black-color: #1E1E1E;
+  --black-color: #1e1e1e;
   --hard-black-color: #191718;
-  --white-color: #FEF8F2;
-  --soft-white-color: #E7EBED;
-  --purple-color: #6F38F6;
-  --pink-color: #EA419A;
-  --blue-color: #439EF5;
-  --red-color: #F4473F;
+  --white-color: #fef8f2;
+  --soft-white-color: #e7ebed;
+  --purple-color: #6f38f6;
+  --pink-color: #ea419a;
+  --blue-color: #439ef5;
+  --red-color: #f4473f;
 
   // visual effects
-  --gradient: linear-gradient(90deg, rgba(111,56,246,1) 0%, rgba(234,65,154,1) 100%);
+  --gradient: linear-gradient(
+    90deg,
+    rgba(111, 56, 246, 1) 0%,
+    rgba(234, 65, 154, 1) 100%
+  );
   --rounded-corners: 1px;
-  --box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.6);
+  --box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.6);
 
   // margins
   --min-margin: 18px;
@@ -45,7 +49,7 @@
 
 h1 {
   font-family: var(--header-font);
-  font-size: 6rem;  /* (96 / 16 = 6) */
+  font-size: 6rem; /* (96 / 16 = 6) */
   font-weight: 400;
 }
 

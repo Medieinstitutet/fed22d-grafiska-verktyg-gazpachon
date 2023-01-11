@@ -9,9 +9,29 @@
 }
 
 .female-pic {
+  position: relative;
   height: 100vh;
   background-image: url(/assets/photos/dom-hill-nimElTcTNyY-unsplash.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: calc((100vw/3)*2)
+}
+
+@media screen and (min-width: 768px) {
+  .camera-card {
+    position: absolute;
+    top: 50%;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
 }
