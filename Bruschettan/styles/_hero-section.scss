@@ -17,25 +17,25 @@ html {
         opacity: 0;
         display: none;
     }
-        ul {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin-right: 60px;
+        li {
+            list-style-type: none;
+            font-weight: bold;
             display: flex;
-            flex-direction: column;
-            gap: 50px;
-            margin-right: 60px;
-            li {
-                list-style-type: none;
-                font-weight: bold;
-                display: flex;
-                span {
-                    align-self: center;
-                    width: 30px;
-                    height: 2px;
-                    margin-right: 20px;
-                    background-color: white;
-                    display: block;
-                }
+            span {
+                align-self: center;
+                width: 30px;
+                height: 2px;
+                margin-right: 20px;
+                background-color: white;
+                display: block;
             }
         }
+    }
     
     h1 {
         font-family: 'Chathura', sans-serif;
@@ -60,7 +60,7 @@ html {
 } 
 
 .menuToggleBtn {
-    position: absolute;
+    position: fixed;
     z-index: 15;
     top: 10px;
     right: 20px;
@@ -90,7 +90,35 @@ html {
 @media screen and (min-width: 768px) {
     // Tablet
     .hero-container {
-        
+        .menuToggleBtn {
+            display: none;
+        }
+        h1 {
+            font-size: 6rem;
+            line-height: 4.5rem;
+        }
+        nav {
+            background-color: transparent;
+            height: 70px;
+            width: 100% !important;
+            opacity: 1 !important;
+            place-content: unset;
+            display: grid;
+            justify-content: flex-end;
+            ul {
+                flex-direction: row; 
+                justify-self: flex-end;
+                li {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+        .arrow-btn {
+            display: none;
+        }
     }
 }
 
