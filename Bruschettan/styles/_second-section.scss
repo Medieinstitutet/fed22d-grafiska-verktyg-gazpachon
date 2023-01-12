@@ -57,7 +57,7 @@
       font-size: 4rem;
     }
 
-    p:nth-child(2) {  // slight overlap on img, first paragraph
+    p:first-of-type {  // slight overlap on img, first paragraph
       position: relative;
       z-index: 100;
       width: 104%;
@@ -88,11 +88,11 @@
     padding: 5rem 4rem;
 
     p,
-    p:nth-child(2) {
+    p:first-of-type {
       width: 60%;
     }
   
-    p:nth-child(2) {
+    p:first-of-type {
       margin-bottom: var(--max-margin);
     }
   }
