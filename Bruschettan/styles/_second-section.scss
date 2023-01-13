@@ -1,0 +1,142 @@
+.vibe-container {
+  background-color: var(--hard-black-color);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.vibe-design {
+  padding: 1rem;
+
+  h2 {
+    margin-bottom: var(--standard-margin);
+  }
+}
+
+.vibe-phone-img {
+  width: 100%;
+  height: auto;
+}
+
+.vibe-btn-container {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--min-margin);
+  padding-bottom: var(--standard-margin);
+}
+
+.vibe-btn {
+  /* 
+  TODO: add btn in HTML
+    <div class="vibe-btn-container">
+      <button type="button" class="vibe-btn">Notify me</button>
+    </div>
+  */
+  border: none;
+  color: #fff;
+  font-weight: 400 ;
+  background: var(--gradient);
+  box-shadow: var(--box-shadow);
+  padding: 0.6rem 3rem;
+}
+
+
+  /*** Tablet ***/
+
+@media only screen and (min-width: 650px) {
+  
+  .vibe-container {
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--white-color);
+  }
+
+  .vibe-design {
+    padding-right: 0;
+    color: var(--hard-black-color);
+  
+    h2 {
+      font-size: 4rem;
+    }
+
+    p:first-of-type {  // slight overlap on img, first paragraph
+      position: relative;
+      z-index: 100;
+      width: 104%;
+    }
+  }
+
+  .vibe-phone-img {
+    position: relative;
+    z-index: 90;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .vibe-btn-container {
+    justify-content: flex-start;
+  }
+
+  .vibe-btn {
+    padding: 1rem 5rem;
+  }
+}
+
+  /*** Laptop and small desktop ***/
+
+@media only screen and (min-width: 1024px) {
+
+  .vibe-design {
+    padding: 5rem 4rem;
+
+    p,
+    p:first-of-type {
+      width: 60%;
+    }
+  
+    p:first-of-type {
+      margin-bottom: var(--max-margin);
+    }
+  }
+
+  .vibe-btn-container {
+    padding-top: var(--max-margin);
+    padding-bottom: var(--standard-margin);
+  }
+
+  .vibe-btn {
+    font-size: 1.5rem;
+    padding: 1rem 5rem;
+  }
+
+}
+
+  /*** Large screens ***/
+
+@media only screen and (min-width: 1600px) {
+
+  .vibe-container {
+    height: 950px;
+  }
+
+  .vibe-design {
+    padding: 7rem 6rem;
+
+    p,
+    p:nth-child(2) {
+      width: 50%;
+    }
+
+    p:nth-child(2) {
+      margin-bottom: var(--max-margin);
+    }
+  }
+
+  .vibe-phone-img {
+    justify-self: end;
+    position: relative;
+    z-index: 90;
+    object-fit: cover;
+    width: auto;
+    height: 950px;
+  }
+    
+}

@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chathura&family=Exo+2:wght@700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Chathura&family=Exo+2:wght@300@400@500@700;800&display=swap"
     rel="stylesheet">
 </head>
 
@@ -17,20 +17,36 @@
 
 <body>
 
-  <section class="hero-container">
+  <section class="hero-container" id="hero-containerID">
+    <button class="menuToggleBtn">
+      <span class="first-row rows">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="second-row rows">
+          <span></span>
+          <span></span> <!-- Middle point-->
+          <span></span>
+        </span>
+        <span class="third-row rows">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+    </button>
     <nav>
       <ul>
-        <li>SPECS</li>
-        <li>BUY</li>
-        <li>SHOWROOM</li>
+        <li><span></span><a href="#">SPECS</a></li>
+        <li><span></span><a href="#">BUY</a></li>
+        <li><span></span><a href="#">SHOWROOM</a></li>
       </ul>
     </nav>
-
-    <h1>NOTHING PHONE</h1>
-    <button class="arrow-btn"></button>
+    <h1>NOTHING <br> PHONE</h1>
+    <a href="#vibeID"><button class="arrow-btn"><div><i class="fa-sharp fa-solid fa-arrow-down"></i></div></button></a>
   </section>
 
-  <section class="vibe">
+  <section class="vibe" id="vibeID">
     <div class="vibe-design">
       <h2>Vibe</h2>
       <p>Meet Vibe, a new way to communicate. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -42,7 +58,7 @@
       </p>
     </div>
 
-    <div class="img"></div>
+    <img class="vibe-phone-img" src="/assets/photos/zana-latif-wSQlD6Ii7WY-unsplash.jpg" height="450" width="300" alt=""></img>
   </section>
 
   <section class="third-section">
@@ -74,7 +90,7 @@
   <section class="nothing">
     <div class="text-container">
       <div class="nothing-text">
-        <h3>NOTHING TO SEE HERE</h3>
+        <h3>NOTHING TO SEE <br class="br-here"> HERE</h3>
         <p>Have you ever had a dream of something more? <br>
           Looking for a phone that can do it all? <br>
           Well... You came to the wrong place. <br>
@@ -84,8 +100,8 @@
       <div class="input">
         <input type="text" id="email" placeholder="Your Email Here">
         <br>
-        <button>Notify Me</button>
-        <button>Learn More</button>
+        <button class="notify-button">Notify Me</button>
+        <button class="learn-button">Learn More</button>
       </div>
 
     </div>
@@ -123,6 +139,8 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="https://kit.fontawesome.com/3be66f569a.js" crossorigin="anonymous"></script>
   <script type="module" src="/main.js"></script>
 </body>
 
