@@ -15,20 +15,36 @@
 
 <body>
 
-  <section class="hero-container">
+  <section class="hero-container" id="hero-containerID">
+    <button class="menuToggleBtn">
+      <span class="first-row rows">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="second-row rows">
+          <span></span>
+          <span></span> <!-- Middle point-->
+          <span></span>
+        </span>
+        <span class="third-row rows">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+    </button>
     <nav>
       <ul>
-        <li>SPECS</li>
-        <li>BUY</li>
-        <li>SHOWROOM</li>
+        <li><span></span><a href="#">SPECS</a></li>
+        <li><span></span><a href="#">BUY</a></li>
+        <li><span></span><a href="#">SHOWROOM</a></li>
       </ul>
     </nav>
-
-    <h1>NOTHING PHONE</h1>
-    <button class="arrow-btn"></button>
+    <h1>NOTHING <br> PHONE</h1>
+    <a href="#vibeID"><button class="arrow-btn"><div><i class="fa-sharp fa-solid fa-arrow-down"></i></div></button></a>
   </section>
 
-  <section class="vibe-container">
+  <section class="vibe" id="vibeID">
     <div class="vibe-design">
       <h2>Vibe</h2>
       <p>Meet Vibe, a new way to communicate. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -110,7 +126,9 @@
       </div>
     </div>
   </footer>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="https://kit.fontawesome.com/3be66f569a.js" crossorigin="anonymous"></script>
   <script type="module" src="/main.js"></script>
 </body>
 
