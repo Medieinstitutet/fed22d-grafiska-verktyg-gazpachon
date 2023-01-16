@@ -1,6 +1,6 @@
 .camera-card {
-  max-width: 385px;
-  margin: 36px;
+  position: relative;
+  padding: 2rem;
 
   ol {
     list-style-position: inside;
@@ -9,6 +9,10 @@
 }
 
 .third-section {
+  position: relative;
+}
+
+.bg-image {
   position: relative;
   height: 100vh;
   background-image: url(/assets/photos/dom-hill-nimElTcTNyY-unsplash.jpg);
@@ -26,8 +30,9 @@ svg {
 
 @media screen and (min-width: 768px) {
   .camera-card {
+    position: absolute;
+    top: 30%;
     margin: 0;
-    padding: 1rem;
     max-width: 350px;
     z-index: 10;
     background-color: var(--black-color);
@@ -43,5 +48,7 @@ svg {
 }
 
 @media screen and (min-width: 1024px) {
-
+  .camera-card {
+    max-width: 400px;
+  }
 }
