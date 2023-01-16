@@ -17,7 +17,7 @@
   position: relative;
   height: 100%;
   background-image: url(/assets/photos/dom-hill-nimElTcTNyY-unsplash.jpg);
-  background-position: 100% 0;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -27,6 +27,12 @@ svg {
   bottom: 0;
   width: 100vw;
   height: 250px;
+}
+
+@media screen and (min-width: 500px) {
+  .bg-image {
+    background-position: 100% 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -39,13 +45,13 @@ svg {
     background-color: var(--black-color);
     opacity: 0;
     transition: all 1s;
-    transform: translateX(500px);
+    transform: translateX(800px);
   }
-}
 
-.camera-card.show {
-  opacity: 1;
-  transform: translateX(0);
+  .camera-card.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media screen and (min-width: 1024px) {
