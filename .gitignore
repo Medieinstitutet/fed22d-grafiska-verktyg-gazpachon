@@ -7,10 +7,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# JS ecosystem
 node_modules
+
+# Generated files and folders
 dist
 dist-ssr
 *.local
+*.css.map
 
 # Editor directories and files
 .vscode/*
