@@ -73,12 +73,8 @@ select {
   width: 45%;
 
   height: 55px;
-  background: rgb(234, 65, 154);
-  background: linear-gradient(
-    265deg,
-    rgba(234, 65, 154, 1) 0%,
-    rgba(111, 56, 246, 1) 75%
-  );
+  background: var(--pink-color);
+  background: var(--gradient);
   color: whitesmoke;
   border: 0px;
   margin-right: 6%;
