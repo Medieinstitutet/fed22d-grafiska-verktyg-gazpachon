@@ -1,5 +1,7 @@
 import './styles/style.scss';
 
+
+//******************* Anton *******************//
 const path1 = document.querySelector('#path-1');
 const path2 = document.querySelector('#path-2');
 const path3 = document.querySelector('#path-3');
@@ -17,6 +19,20 @@ gsap.to(path2, { duration: 1, attr: {d: path2d}, yoyo: true, repeat: -1, delay: 
 gsap.to(path3, { duration: 1, attr: {d: path3d}, yoyo: true, repeat: -1 })
 gsap.to(path4, { duration: 1, attr: {d: path4d}, yoyo: true, repeat: -1, delay: 0.3 });
 gsap.to(path5, { duration: 1, attr: {d: path5d}, yoyo: true, repeat: -1 });
+
+
+// add intersection observer
+const observer = new IntersectionObserver((entries) => {
+    console.log(entries)
+    entries.forEach((entry) => {
+        console.log(entry);
+        entry.target.classList.toggle('show', entry.isIntersecting);
+    });
+});
+
+// observe hidden elements (card)
+const animationCard = document.querySelector('.camera-card');
+observer.observe(animationCard);
 
 let menuIsOpen = false;
 const menu = document.querySelector('nav');

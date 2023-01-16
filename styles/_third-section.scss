@@ -8,7 +8,7 @@
   }
 }
 
-.female-pic {
+.third-section {
   position: relative;
   height: 100vh;
   background-image: url(/assets/photos/dom-hill-nimElTcTNyY-unsplash.jpg);
@@ -26,10 +26,20 @@ svg {
 
 @media screen and (min-width: 768px) {
   .camera-card {
-    position: absolute;
-    top: 50%;
     margin: 0;
+    padding: 1rem;
+    max-width: 350px;
+    z-index: 10;
+    background-color: var(--black-color);
+    opacity: 0;
+    transition: all 1s;
+    transform: translateX(500px);
   }
+}
+
+.camera-card.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media screen and (min-width: 1024px) {
