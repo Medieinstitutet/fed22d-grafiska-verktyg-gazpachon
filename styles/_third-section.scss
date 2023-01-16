@@ -10,13 +10,14 @@
 
 .third-section {
   position: relative;
+  height: 100vh;
 }
 
 .bg-image {
   position: relative;
-  height: 100vh;
+  height: 100%;
   background-image: url(/assets/photos/dom-hill-nimElTcTNyY-unsplash.jpg);
-  background-position: center;
+  background-position: 100% 0;
   background-repeat: no-repeat;
   background-size: cover;
 }
