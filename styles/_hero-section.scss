@@ -40,7 +40,7 @@ html {
     h1 {
         font-family: 'Chathura', sans-serif;
         position: absolute;
-        left: 20px;
+        left: 10%;
         bottom: 40px;
         line-height: 3.5rem;
         font-weight: 300;
@@ -99,7 +99,7 @@ html {
         }
         nav {
             background-color: transparent;
-            height: 70px;
+            height: 55px;
             width: 100% !important;
             opacity: 1 !important;
             place-content: unset;
@@ -109,6 +109,7 @@ html {
                 flex-direction: row; 
                 justify-self: flex-end;
                 li {
+                    align-self: flex-end;
                     span {
                         display: none;
                     }
@@ -125,7 +126,6 @@ html {
 @media screen and (min-width: 1024px) {
     // PC
     .hero-container {
-        color: green;
     }
 }
 
