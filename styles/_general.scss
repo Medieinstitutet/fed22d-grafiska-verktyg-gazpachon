@@ -47,6 +47,15 @@
   box-sizing: border-box;
 }
 
+section {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+nav {
+  max-width: 1440px;
+}
+
 h1 {
   font-family: var(--header-font);
   font-size: 6rem; /* (96 / 16 = 6) */
