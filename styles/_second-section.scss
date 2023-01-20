@@ -1,10 +1,10 @@
 .vibe-container {
-  background-color: var(--hard-black-color);
   display: grid;
   grid-template-columns: 1fr;
 }
 
 .vibe-design {
+  background-color: var(--hard-black-color);
   padding: 1rem;
 
   h2 {
@@ -34,11 +34,11 @@
   
   .vibe-container {
     grid-template-columns: 1fr 1fr;
-    background-color: var(--white-color);
   }
 
   .vibe-design {
     padding-right: 0;
+    background-color: var(--white-color);
     color: var(--hard-black-color);
   
     h2 {
@@ -94,7 +94,6 @@
     font-size: 1.5rem;
     padding: 1rem 5rem;
   }
-
 }
 
   /*** Large screens ***/
@@ -119,7 +118,6 @@
   }
 
   .vibe-phone-img {
-    justify-self: end;
     position: relative;
     z-index: 90;
     object-fit: cover;
