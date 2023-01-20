@@ -79,10 +79,13 @@ function createEventListeners() {
 function navScroll(x) {
     if (x.matches) { // Changes background color of nav bar, if in desktop view and scrolls down to vibe section
         gsap.to('nav', {
-            duration: 0.8, // TODO: Duration does not work
             backgroundColor: 'var(--black-color)',
             scrollTrigger: {
-                trigger: '.vibe-container'
+                trigger: '.hero-container',
+                start: "center top",
+                end: "center bottom",
+                scrub: true,
+                markers: true
             }
         })
     }
