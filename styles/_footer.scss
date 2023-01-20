@@ -1,0 +1,24 @@
+.cookie-bar {
+  z-index: 151;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #1D1D1D;
+  color: #B2AFAF;
+  width: 100vw;
+  height: 80px;
+
+  button {
+    margin-right: 36px;
+    background-color: var(--gradient);
+    color: #FFFFFF;
+    height: 40px;
+    width: 150px;
+  }
+
+  p {
+    margin-left: 36px;
+  }
+}

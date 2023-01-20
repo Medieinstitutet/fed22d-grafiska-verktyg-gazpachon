@@ -1,0 +1,53 @@
+.camera-card {
+  position: relative;
+  padding: 2rem;
+
+  ol {
+    list-style-position: inside;
+    padding: 0px;
+  }
+}
+
+.third-section {
+  position: relative;
+}
+
+.bg-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  z-index: 15;
+}
+
+@media screen and (min-width: 768px) {
+  .camera-card {
+    position: absolute;
+    top: 30%;
+    margin: 0;
+    max-width: 350px;
+    z-index: 10;
+    background-color: var(--black-color);
+    opacity: 0;
+    transition: all 1s;
+    transform: translateX(800px);
+  }
+
+  .camera-card.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .camera-card {
+    max-width: 400px;
+  }
+}

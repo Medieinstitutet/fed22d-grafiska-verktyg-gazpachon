@@ -1,0 +1,11 @@
+button {
+  cursor: pointer;
+  border-radius: var(--rounded-corners);
+}
+
+.gradient-btn {
+  background: var(--pink-color);
+  background: var(--gradient);
+  color: var(--white-color);
+  border: 0px;
+}
