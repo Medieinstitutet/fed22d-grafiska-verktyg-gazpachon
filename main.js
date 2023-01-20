@@ -1,8 +1,5 @@
 import './styles/style.scss';
 
-
-//******************* Anton *******************//
-
 // svg path variables
 const path1 = document.querySelector('#path-1');
 const path2 = document.querySelector('#path-2');
@@ -15,13 +12,10 @@ const path3d = 'M0 493L129 425L257 502L386 445L514 511L643 490L771 441L900 482L9
 const path4d = 'M0 500L129 536L257 510L386 513L514 496L643 508L771 484L900 506L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z';
 const path5d = 'M0 558L129 530L257 558L386 550L514 543L643 569L771 563L900 538L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z';
 
-// animate paths on svg
-gsap.to(path1, { duration: 1, attr: {d: path1d}, yoyo: true, repeat: -1 });
-gsap.to(path2, { duration: 1, attr: {d: path2d}, yoyo: true, repeat: -1, delay: 0.3 });
-gsap.to(path3, { duration: 1, attr: {d: path3d}, yoyo: true, repeat: -1 })
-gsap.to(path4, { duration: 1, attr: {d: path4d}, yoyo: true, repeat: -1, delay: 0.3 });
-gsap.to(path5, { duration: 1, attr: {d: path5d}, yoyo: true, repeat: -1 });
-
+// menu variables
+const bigScreen = window.matchMedia("(min-width: 1024px)")
+let menuIsOpen = false;
+const menuOptions = document.querySelectorAll('nav>ul>li>a');
 
 // add intersection observer
 const observer = new IntersectionObserver((entries) => {
@@ -30,60 +24,76 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
+function closeCookie() {
+    const cookieBar = document.querySelector('.cookie-bar');
+    cookieBar.style.display = "none";
+}
+
+document.querySelector('.cookie-btn').addEventListener('click', closeCookie);
+
 // observe card element
 const animationCard = document.querySelector('.camera-card');
 observer.observe(animationCard);
 
 //*********************************************//
 
-let menuIsOpen = false;
-const menu = document.querySelector('nav');
-const menuOptions = document.querySelectorAll('nav>ul>li>a');
-let windowView = window.matchMedia("(min-width: 768px)");
-
 function closeMenu() {
     gsap.fromTo('nav', {opacity:1, x: 0, display:'grid'}, {opacity:0, x: 500, duration: 0.5, display:'none'})
-        let t2 = gsap.timeline({ defaults: {duration: 0.15} } );
-        t2.to(".second-row>span:nth-child(1)", {x:0, y:0});
-        t2.to(".third-row>span:nth-child(2)", {x:0, y:0});
-        t2.to(".second-row>span:nth-child(3)", {x:0, y:0});
-        t2.to(".first-row>span:nth-child(2)", {x:0, y:0});
+    gsap.to(".second-row>span:nth-child(1)", {x:0, y:0, duration: 0.15});
+    gsap.to(".third-row>span:nth-child(2)", {x:0, y:0, duration: 0.15, delay: 0.1});
+    gsap.to(".second-row>span:nth-child(3)", {x:0, y:0, duration: 0.15, delay: 0.2});
+    gsap.to(".first-row>span:nth-child(2)", {x:0, y:0, duration: 0.15, delay: 0.3});
     menuIsOpen = false;
 }
+function openMenu() {
+    gsap.fromTo('nav', {display:'none', opacity:0, x: 500},{display:'grid',opacity:1, x: 0, duration: 0.3})
+    gsap.to(".first-row>span:nth-child(2)", {x:8.6, y:8.6, duration: 0.15});
+    gsap.to(".second-row>span:nth-child(3)", {x:-8.6, y:8.6, duration: 0.15, delay: 0.1});
+    gsap.to(".third-row>span:nth-child(2)", {x:-8.6, y:-8.6, duration: 0.15, delay: 0.2});
+    gsap.to(".second-row>span:nth-child(1)", {x:8.6, y:-8.6, duration: 0.15, delay: 0.3});
+    menuIsOpen = true;
+}
+function stopFunction() {
+    gsap.set('.arrow-btn>i', {y:0, overwrite: "auto", duration: 0.3});
+}
 
-document.querySelector('.menuToggleBtn').addEventListener('click', () => {
-    if (!menuIsOpen) { // Mobile menu button handler
-        gsap.fromTo('nav', {display:'none', opacity:0, x: 500},{display:'grid',opacity:1, x: 0, duration: 0.3})
-        let tl = gsap.timeline({ defaults: {duration: 0.15} } );
-        tl.to(".first-row>span:nth-child(2)", {x:8.6, y:8.6});
-        tl.to(".second-row>span:nth-child(3)", {x:-8.6, y:8.6});
-        tl.to(".third-row>span:nth-child(2)", {x:-8.6, y:-8.6});
-        tl.to(".second-row>span:nth-child(1)", {x:8.6, y:-8.6});
-        menuIsOpen = true;
-    } else {
-        closeMenu();
-    }
-})
-for (let i = 0; i < menuOptions.length; i++) // Closes menu after a link press
+function createEventListeners() {
+    document.querySelector('.menuToggleBtn').addEventListener('click', () => {
+        if (!menuIsOpen) { // Mobile menu button handler
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    });
+    for (let i = 0; i < menuOptions.length; i++) // Closes menu after a link press
     menuOptions[i].addEventListener('click', () => {
         closeMenu();
-})
-document.querySelector('.arrow-btn').addEventListener('click', () => {
-    gsap.set('.arrow-btn>div', {y:0, overwrite: "auto", duration: 0.3});
-})
-gsap.fromTo('.arrow-btn>div', {y:-10}, {y:10, duration:1, repeat: -1, yoyo: true, ease: 'power0'})
+    })
+    document.querySelector('.arrow-btn').addEventListener('click', stopFunction);
+}
 
-/*
-if (windowView) {
-    gsap.to("nav", {
-    scrollTrigger: "#vibeID", // start the animation when ".box" enters the viewport (once)
-    backgroundColor: '#1E1E1E',
-    duration: 0.3
-    });
-} // TODO: Funkar ej
-gsap.to("nav", {
-    scrollTrigger: "#hero-containerID", // start the animation when ".box" enters the viewport (once)
-    backgroundColor: 'transparent',
-    duration: 0.3
-    });
-*/
+function navScroll(x) {
+    if (x.matches) { // Changes background color of nav bar, if in desktop view and scrolls down to vibe section
+        gsap.to('nav', {
+            backgroundColor: 'var(--black-color)',
+            scrollTrigger: {
+                trigger: '.hero-container',
+                start: "center top",
+                end: "center bottom",
+                scrub: true,
+                markers: false
+            }
+        })
+    }
+}
+
+navScroll(bigScreen);
+createEventListeners();
+// animate arrow
+gsap.fromTo('.arrow-btn>i', {y:-10}, {y:10, duration:1, repeat: -1, yoyo: true, ease: 'power0'})
+// animate paths on svg
+gsap.to(path1, { duration: 1, attr: {d: path1d}, yoyo: true, repeat: -1 });
+gsap.to(path2, { duration: 1, attr: {d: path2d}, yoyo: true, repeat: -1, delay: 0.3 });
+gsap.to(path3, { duration: 1, attr: {d: path3d}, yoyo: true, repeat: -1 })
+gsap.to(path4, { duration: 1, attr: {d: path4d}, yoyo: true, repeat: -1, delay: 0.3 });
+gsap.to(path5, { duration: 1, attr: {d: path5d}, yoyo: true, repeat: -1 });
