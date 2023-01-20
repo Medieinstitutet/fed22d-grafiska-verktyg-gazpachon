@@ -24,6 +24,13 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
+function closeCookie() {
+    const cookieBar = document.querySelector('.cookie-bar');
+    cookieBar.style.display = "none";
+}
+
+document.querySelector('.cookie-btn').addEventListener('click', closeCookie);
+
 // observe card element
 const animationCard = document.querySelector('.camera-card');
 observer.observe(animationCard);
