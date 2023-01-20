@@ -1,8 +1,5 @@
 import './styles/style.scss';
 
-
-//******************* Anton *******************//
-
 // svg path variables
 const path1 = document.querySelector('#path-1');
 const path2 = document.querySelector('#path-2');
@@ -15,13 +12,10 @@ const path3d = 'M0 493L129 425L257 502L386 445L514 511L643 490L771 441L900 482L9
 const path4d = 'M0 500L129 536L257 510L386 513L514 496L643 508L771 484L900 506L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z';
 const path5d = 'M0 558L129 530L257 558L386 550L514 543L643 569L771 563L900 538L900 601L771 601L643 601L514 601L386 601L257 601L129 601L0 601Z';
 
-// animate paths on svg
-gsap.to(path1, { duration: 1, attr: {d: path1d}, yoyo: true, repeat: -1 });
-gsap.to(path2, { duration: 1, attr: {d: path2d}, yoyo: true, repeat: -1, delay: 0.3 });
-gsap.to(path3, { duration: 1, attr: {d: path3d}, yoyo: true, repeat: -1 })
-gsap.to(path4, { duration: 1, attr: {d: path4d}, yoyo: true, repeat: -1, delay: 0.3 });
-gsap.to(path5, { duration: 1, attr: {d: path5d}, yoyo: true, repeat: -1 });
-
+// menu variables
+const bigScreen = window.matchMedia("(min-width: 1024px)")
+let menuIsOpen = false;
+const menuOptions = document.querySelectorAll('nav>ul>li>a');
 
 // add intersection observer
 const observer = new IntersectionObserver((entries) => {
@@ -35,11 +29,6 @@ const animationCard = document.querySelector('.camera-card');
 observer.observe(animationCard);
 
 //*********************************************//
-const bigScreen = window.matchMedia("(min-width: 1024px)")
-let menuIsOpen = false;
-const menuOptions = document.querySelectorAll('nav>ul>li>a');
-
-
 
 function closeMenu() {
     gsap.fromTo('nav', {opacity:1, x: 0, display:'grid'}, {opacity:0, x: 500, duration: 0.5, display:'none'})
@@ -85,7 +74,7 @@ function navScroll(x) {
                 start: "center top",
                 end: "center bottom",
                 scrub: true,
-                markers: true
+                markers: false
             }
         })
     }
@@ -93,6 +82,11 @@ function navScroll(x) {
 
 navScroll(bigScreen);
 createEventListeners();
+// animate arrow
 gsap.fromTo('.arrow-btn>i', {y:-10}, {y:10, duration:1, repeat: -1, yoyo: true, ease: 'power0'})
-
-
+// animate paths on svg
+gsap.to(path1, { duration: 1, attr: {d: path1d}, yoyo: true, repeat: -1 });
+gsap.to(path2, { duration: 1, attr: {d: path2d}, yoyo: true, repeat: -1, delay: 0.3 });
+gsap.to(path3, { duration: 1, attr: {d: path3d}, yoyo: true, repeat: -1 })
+gsap.to(path4, { duration: 1, attr: {d: path4d}, yoyo: true, repeat: -1, delay: 0.3 });
+gsap.to(path5, { duration: 1, attr: {d: path5d}, yoyo: true, repeat: -1 });
