@@ -16,3 +16,8 @@ Overall, the goal of the design choices on a landing page is to create a visuall
 
 har snabbmeny
 
+![social media share link](https://github.com/Medieinstitutet/fed22d-grafiska-verktyg-gazpachon/blob/main/images/screenshots/SoMe-link-screenshot.jpg?raw=true)
+
+---
+
+![social media share link](https://github.com/Medieinstitutet/fed22d-grafiska-verktyg-gazpachon/blob/main/images/screenshots/lighthouse-report.jpg?raw=true)
