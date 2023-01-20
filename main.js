@@ -24,18 +24,16 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
-function closeCookie() {
-    const cookieBar = document.querySelector('.cookie-bar');
-    cookieBar.style.display = "none";
-}
-
-document.querySelector('.cookie-btn').addEventListener('click', closeCookie);
-
 // observe card element
 const animationCard = document.querySelector('.camera-card');
 observer.observe(animationCard);
 
 //*********************************************//
+
+function closeCookieBar() {
+    const cookieBar = document.querySelector('.cookie-bar');
+    cookieBar.style.display = "none";
+}
 
 function closeMenu() {
     gsap.fromTo('nav', {opacity:1, x: 0, display:'grid'}, {opacity:0, x: 500, duration: 0.5, display:'none'})
@@ -70,6 +68,7 @@ function createEventListeners() {
         closeMenu();
     })
     document.querySelector('.arrow-btn').addEventListener('click', stopFunction);
+    document.querySelector('.cookie-btn').addEventListener('click', closeCookieBar);
 }
 
 function navScroll(x) {
